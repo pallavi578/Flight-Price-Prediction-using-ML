@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Information Prediction</title>
+</head>
+<body>
+    <h2>Flight Information</h2>
+    
+    <form method="POST">
+        <label for="departure_time">Departure Time:</label>
+        <input type="time" id="departure_time" name="departure_time" required><br><br>
+
+        <label for="arrival_time">Arrival Time:</label>
+        <input type="time" id="arrival_time" name="arrival_time" required><br><br>
+
+        <label for="source_place">Source Place:</label>
+        <select id="source_place" name="source_place" required>
+            <option value="Chennai">Chennai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Cochin">Cochin</option>
+        </select><br><br>
+
+        <label for="destination_place">Destination Place:</label>
+        <select id="destination_place" name="destination_place" required>
+            <option value="Chennai">Chennai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Cochin">Cochin</option>
+        </select><br><br>
+
+        <label for="number_of_stops">Number of Stops:</label>
+        <input type="number" id="number_of_stops" name="number_of_stops" min="0" max="4" value="0" required><br><br>
+
+        <label for="airline_type">Airline Type:</label>
+        <select id="airline_type" name="airline_type" required>
+            <option value="IndiGo">IndiGo</option>
+            <option value="Air India">Air India</option>
+            <option value="Jet Airways">Jet Airways</option>
+            <option value="SpiceJet">SpiceJet</option>
+            <option value="Multiple carriers">Multiple carriers</option>
+            <option value="GoAir">GoAir</option>
+            <option value="Vistara">Vistara</option>
+            <option value="Air Asia">Air Asia</option>
+            <option value="Vistara Premium economy">Vistara Premium economy</option>
+            <option value="Jet Airways Business">Jet Airways Business</option>
+            <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+            <option value="Trujet">Trujet</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if prediction_result %}
+        <h3>Prediction Result:</h3>
+        <p>The flight is predicted to be: <strong>{{ prediction_result }}</strong></p>
+    {% endif %}
+</body>
+</html>
